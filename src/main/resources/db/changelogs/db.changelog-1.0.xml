@@ -1,0 +1,48 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+                   xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-3.9.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+    <changeSet author="developer (generated)" id="1593389493942-1">
+        <createTable tableName="car">
+            <column autoIncrement="true" name="id" type="INT">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="name" type="VARCHAR(45)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="car_type_id" type="INT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="developer (generated)" id="1593389493942-2">
+        <createTable tableName="car_type">
+            <column autoIncrement="true" name="id" type="INT">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="name" type="VARCHAR(45)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="developer (generated)" id="1593389493942-3">
+        <createIndex indexName="fk_car_car_type_idx" tableName="car">
+            <column name="car_type_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="developer (generated)" id="1593389493942-4">
+        <addForeignKeyConstraint
+                baseColumnNames="car_type_id"
+                baseTableName="car"
+                constraintName="fk_car_car_type"
+                deferrable="false"
+                initiallyDeferred="false"
+                onDelete="RESTRICT"
+                onUpdate="RESTRICT"
+                referencedColumnNames="id"
+                referencedTableName="car_type"
+                validate="true"
+        />
+    </changeSet>
+</databaseChangeLog>

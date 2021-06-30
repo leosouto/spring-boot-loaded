@@ -1,0 +1,51 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+                   xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-3.9.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+    <changeSet author="developer (generated)" id="1593389227688-1">
+        <insert tableName="car_type">
+            <column name="id" valueNumeric="1"/>
+            <column name="name" value="Rookie"/>
+        </insert>
+        <insert tableName="car_type">
+            <column name="id" valueNumeric="2"/>
+            <column name="name" value="Amateur"/>
+        </insert>
+        <insert tableName="car_type">
+            <column name="id" valueNumeric="3"/>
+            <column name="name" value="Semi-Pro"/>
+        </insert>
+        <insert tableName="car_type">
+            <column name="id" valueNumeric="4"/>
+            <column name="name" value="Pro"/>
+        </insert>
+    </changeSet>
+    <changeSet author="developer (generated)" id="1593389227688-2">
+        <insert tableName="car">
+            <column name="id" valueNumeric="1"/>
+            <column name="name" value="Toyeca"/>
+            <column name="car_type_id" valueNumeric="1"/>
+        </insert>
+        <insert tableName="car">
+            <column name="id" valueNumeric="2"/>
+            <column name="name" value="Panga TC"/>
+            <column name="car_type_id" valueNumeric="2"/>
+        </insert>
+        <insert tableName="car">
+            <column name="id" valueNumeric="3"/>
+            <column name="name" value="RV Jetcar"/>
+            <column name="car_type_id" valueNumeric="3"/>
+        </insert>
+        <insert tableName="car">
+            <column name="id" valueNumeric="4"/>
+            <column name="name" value="Ovni"/>
+            <column name="car_type_id" valueNumeric="4"/>
+        </insert>
+        <insert tableName="car">
+            <column name="id" valueNumeric="7"/>
+            <column name="name" value="Coll Moss"/>
+            <column name="car_type_id" valueNumeric="1"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>
